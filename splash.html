@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Abridged</title>
+  <link rel="stylesheet" href="./style-splash.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,600,900i&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://www.curtainsjs.com/build/curtains.min.js"></script>
+</head>
+
+<body>
+
+    <div id="canvas"></div>
+<main id="scroll" class="app">
+	<div id="scroll-scrollbar">
+		<div id="scroll-scrollbar-thumb"></div>
+	</div>
+	<div id="scroll-container" class="page">
+		<div class="scroll-effect">
+			<img src="img/moongod.jpg">
+			<div class="headline"><h1>MVP God<br>Lives <a href="index.html">Here</a></h1></div>
+		</div>
+		
+	</div>
+</main>
+
+<script id = "plane-vs" type = "x-shader/x-vertex" >
+    #ifdef GL_ES
+    precision mediump float;
+    #endif
+    // those are the mandatory attributes that the lib sets
+    attribute vec3 aVertexPosition;
+    attribute vec2 aTextureCoord;
+    // those are mandatory uniforms that the lib sets and that contain our model view and projection matrix
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    // our texture matrix that will handle image cover
+    uniform mat4 uTextureMatrix0;
+    uniform float uTime;
+    uniform float uMultiplicator;
+    uniform vec2 uMousePosition;
+    uniform vec2 uResolution;
+    uniform float uMouseMoveStrength;
+    // pass your vertex and texture coords to the fragment shader
+    varying vec3 vVertexPosition;
+    varying vec2 vTextureCoord;
+    void main() {
+		vec3 vertexPosition = aVertexPosition;
+
+		float resolution = uResolution.x / uResolution.y;
+
+		// get the distance between our vertex and the mouse position
+		float distanceFromMouse = distance(uMousePosition, vec2(vertexPosition.x * resolution, vertexPosition.y));
+
+		// calculate our wave effect
+		float waveSinusoid = cos(5. * (distanceFromMouse - uTime));
+
+		// attenuate the effect based on mouse distance
+		float distanceStrength = (0.4 / (distanceFromMouse + 0.4));
+
+		// calculate our distortion effect
+		float distortionEffect = distanceStrength * waveSinusoid * uMouseMoveStrength;
+
+		// apply it to our vertex position
+		vertexPosition.z += distortionEffect / 15.0;
+		vertexPosition.x += distortionEffect / 15.0 * (uMousePosition.x - vertexPosition.x);
+		vertexPosition.y += distortionEffect / 15.0 * (uMousePosition.y - vertexPosition.y);
+
+		// vertexPosition.y += sin(((vertexPosition.x + 1.0) / 2.0) * 3.141592) * uMultiplicator*0.2;
+		gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
+		// set the varyings
+		// here we use our texture matrix to calculate the accurate texture coords
+		vTextureCoord = (uTextureMatrix0 * vec4(aTextureCoord, 0.0, 1.0)).xy;
+		vVertexPosition = vertexPosition;
+	}
+</script>
+
+<script id = "plane-fs" type = "x-shader/x-fragment" >
+    #ifdef GL_ES
+    precision mediump float;
+    #endif
+
+    uniform float uTime;
+    uniform vec2 uResolution;
+    uniform vec2 uMousePosition;
+
+    varying vec3 vVertexPosition;
+    varying vec2 vTextureCoord;
+
+    uniform sampler2D simplePlaneTexture;
+
+
+    void main(void) {
+
+		// get our texture coords
+		vec2 textureCoords = vec2(vTextureCoord.x, vTextureCoord.y);
+
+		// apply our texture
+		vec4 finalColor = texture2D(simplePlaneTexture, textureCoords);
+
+						// fake shadows based on vertex position along Z axis
+						finalColor.rgb -= clamp(-vVertexPosition.z, 0.0, 1.0);
+						// fake lights based on vertex position along Z axis
+						finalColor.rgb += clamp(vVertexPosition.z, 0.0, 1.0);
+
+						// handling premultiplied alpha (useful if we were using a png with transparency)
+						finalColor = vec4(finalColor.rgb * finalColor.a, finalColor.a);
+
+		gl_FragColor = finalColor;
+	} 
+</script>
+
+<script>
+Number.prototype.map = function(in_min, in_max, out_min, out_max) {
+	return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+};
+
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+	navigator.userAgent
+);
+const isFIREFOX = navigator.userAgent.includes("Firefox");
+const firefoxMultiplier = 33;
+
+const scrollStrength = 1;
+const scrollDuration = 1;
+const scrollEasing = Power4.easeOut;
+
+const jsScroll = document.querySelector("#scroll");
+const jsScrollContainer = document.querySelector("#scroll-container");
+const scrollbar = document.querySelector("#scroll-scrollbar");
+const scrollbarThumb = document.querySelector("#scroll-scrollbar-thumb");
+
+let scrollbarThumbHeight;
+let maxDeltaY;
+let deltaY = 0;
+
+let delta = {
+	y: 0,
+	x: 0
+};
+
+let mouseDown = false;
+let touchStart = false;
+let touchPosition;
+
+let HEIGHT;
+
+let planes = [];
+let curtains;
+let planeElements;
+
+function initCurtain() {
+	curtains = new Curtains("canvas");
+	planeElements = document.querySelectorAll(".scroll-effect");
+
+	planeElements.forEach((planeElement, index) => {
+		let planeElementsParams = {
+			vertexShaderID: "plane-vs",
+			fragmentShaderID: "plane-fs",
+			widthSegments: 20,
+			heightSegments: 20,
+			uniforms: {
+				time: {
+					name: "uTime",
+					type: "1f",
+					value: 0
+				},
+				multiplicator: {
+					name: "uMultiplicator",
+					type: "1f",
+					value: 0
+				},
+				mousePosition: {
+					name: "uMousePosition",
+					type: "2f",
+					value: [0, 0]
+				},
+				resolution: {
+					name: "uResolution",
+					type: "2f",
+					value: [0, 0]
+				},
+				mouseMoveStrength: {
+					name: "uMouseMoveStrength",
+					type: "1f",
+					value: 0
+				}
+			}
+		};
+		let plane = curtains.addPlane(planeElement, planeElementsParams);
+		if (plane) {
+			planes.push(plane);
+			plane.uniforms.resolution.value = [
+				window.devicePixelRatio * planeElement.clientWidth,
+				window.devicePixelRatio * planeElement.clientHeight
+			];
+			planeElement.addEventListener("click", event => {
+				let x = event.offsetX / planeElement.clientWidth * 2 - 1;
+				let y = -(event.offsetY / planeElement.clientHeight) * 2 + 1;
+				let tl = new TimelineMax();
+				tl.to(plane.uniforms.mouseMoveStrength, 1, {
+					value: 3
+				});
+				tl.to(plane.uniforms.mouseMoveStrength, 1, {
+					value: 0
+				});
+				TweenMax.to(plane.uniforms.mousePosition.value, 1, {
+					"0": x,
+					"1": y
+				});
+			});
+			plane.onRender(() => {
+				plane.uniforms.time.value += 0.015;
+			});
+		}
+	});
+}
+
+function init() {
+	HEIGHT = jsScroll.offsetHeight;
+	scrollbarThumbHeight = 100 - jsScrollContainer.offsetHeight / HEIGHT;
+	maxDeltaY = -jsScrollContainer.offsetHeight + HEIGHT;
+	isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	);
+	isMobile ? document.body.classList.add("is-mobile") : null;
+	scroll();
+}
+
+function onWheel(e) {
+	let delta =
+		-e.deltaY *
+		(isFIREFOX ? firefoxMultiplier * scrollStrength : 1 * scrollStrength);
+
+	deltaY += delta;
+
+	scroll();
+}
+
+function scroll() {
+	deltaY = Math.min(Math.max(maxDeltaY, deltaY), 0);
+	TweenMax.to(delta, scrollDuration, {
+		y: deltaY,
+		ease: scrollEasing,
+		onUpdate: () => {
+			planes.forEach(plane => {
+				plane.setRelativePosition(
+					plane.relativeTranslation.x,
+					delta.y,
+					plane.relativeTranslation.z
+				);
+			});
+		}
+	});
+	TweenMax.to(jsScrollContainer, scrollDuration, {
+		y: deltaY,
+		ease: scrollEasing
+	});
+	planes.forEach(plane => {
+		let multiplicator = 3;
+		TweenMax.to(plane.uniforms.mousePosition.value, 1, {
+			"0": 0,
+			"1": 0
+		});
+		if (plane.uniforms.mouseMoveStrength.value < 3) {
+			let tl = new TimelineMax();
+			tl.to(plane.uniforms.mouseMoveStrength, 1, {
+				value: multiplicator
+			});
+			tl.to(plane.uniforms.mouseMoveStrength, 1, {
+				value: 0
+			});
+		}
+	});
+	let maxThumbDeltaY = HEIGHT - scrollbarThumb.offsetHeight;
+	let thumbDeltaY = maxThumbDeltaY - deltaY.map(maxDeltaY, 0, 0, maxThumbDeltaY);
+	thumbDeltaY = Math.min(Math.max(0, thumbDeltaY), maxThumbDeltaY);
+	TweenMax.to(scrollbarThumb, scrollDuration, {
+		y: thumbDeltaY,
+		ease: scrollEasing
+	});
+}
+
+jsScroll.addEventListener("wheel", onWheel);
+window.addEventListener("resize", init);
+
+window.addEventListener("DOMContentLoaded", function() {
+	init();
+	initCurtain();
+});
+</script>
+
+</body>

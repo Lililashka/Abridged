@@ -1,0 +1,162 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+    background-color: black;
+  }
+  
+  #canvas {
+  /* make the canvas wrapper fits the document */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  }
+  
+  section{
+      height:100vh;
+      width:100%;
+  }
+  
+  img{
+    width: 60%;
+    height:100vh;
+    
+  }
+  
+  body.is-mobile #scroll-scrollbar{
+      display:none;
+  }
+  
+  body.is-mobile{
+      overflow:auto;
+  }
+  
+  .page {
+        padding: 3vw;
+  }
+  .scroll-effect {
+      margin-bottom: 5rem !important;
+  }
+
+
+  .scroll-effect img{
+      visibility:hidden;
+  }
+  
+  body.is-mobile canvas {
+      display:none;
+  }
+  
+  body.is-mobile .scroll-effect img{
+      visibility:visible;
+  }
+
+/*////////// TEXT //////////*/
+
+  h1 {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 6.875rem;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 0rem;
+  }
+
+  .headline {
+    display: flex;
+    justify-content: center;
+    font-size: 6.875rem;
+
+  }
+
+
+/*////////// LINK //////////*/
+
+/* unvisited link */
+a:link {
+    color: white;
+    transition: 0.3s;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #27E774;
+    transition: 0.3s;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #27E774;
+    transition: 0.3s;
+  }
+
+/*////////// BREAK POINTS //////////*/
+ 
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767px) {
+  img {
+    margin-top: 15rem;
+
+  }
+  
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+  body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  }
+
+  h1 {
+    font-size: 10rem;
+  }
+  /*img {
+    margin-top: 30rem;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+   -webkit-transform: translateY(-50%) translateX(-50%);
+    overflow: hidden;
+  }*/
+  
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+  h1 {
+    font-size: 10rem;
+  }
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  h1 {
+    font-size: 25rem;
+  }
+ }
