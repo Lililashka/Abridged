@@ -148,6 +148,11 @@ h6 {
 
 /*/////// IMAGE /////// */
 
+.img-abridged {
+  width: 10%;
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
 .img-top-one {
   display: block;
   margin-left: 70%;
@@ -201,13 +206,6 @@ h6 {
   padding: 4rem;
   padding-top: 2rem;
 } 
-
-/*.container {
-  /*overflow-y: scroll; once it snaps, the animation doesn't work 
-
-  border: 2px solid var(--gs0);
-  height: 100vh;
-}*/
 
 .section {
   height: 100vh;
@@ -357,62 +355,45 @@ h6 {
 /*Small devices (320px to landscape phones)*/
 @media only screen and (max-width: 580px) and (min-width: 300px) { 
   h1 {
-    font-size: 2.9rem;
+    font-size: 2.2rem;
   }
   h2 {
     font-size: 2rem;
     padding-top: 0.8rem;
     padding-bottom: 0.7rem;
   }
-  h5 {
+  h4 {
     font-size: 1rem;
+    line-height: 1.7;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+  .headline-1 {
+    text-align: center !important;
+  }
+  .img-abridged {
+    width: 25%;
+    padding-left: 2rem;
+    padding-top: 1rem;
   }
   .section {
-    height: 60vh;
-    padding: 1rem;
+    height: 50vh;
   }
   .sub-headline-2 {
     position: relative;
-    left: 1rem;
+    left: 0rem;
     margin-top: -2.2rem;
+    text-align: left;
+  }
+  .sub-headline-3 {
+    text-align: left;
   }
   .sub-headline-4 {
     text-align: left;
     top: -2.5rem;
   }
-  .img-top-one {
-    margin-left: 70%;
-    width: 23%;
-  }
-  .img-top-three {
-    margin-left: 80%;
-    margin-right: auto;
-    width: 28%;
-  }
-
-}
-
-
-/* Small & Medium devices (tablets, phones 550px - 768px)*/
-@media only screen and (max-width: 768px) and (min-width: 581px) { 
-  h1 {
-    font-size: 2.9rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h5 {
-    font-size: 1rem;
-  }
-  .section {
-    height: 60vh;
-    padding: 1rem;
-  }
-  .sub-headline-2 {
-    left: 5rem;
-    margin-top: -2.2rem;
-  }
-  .sub-headline-4 {
+  .description-two {
     text-align: left;
   }
   .img-top-one {
@@ -424,6 +405,73 @@ h6 {
     margin-right: auto;
     width: 28%;
   }
+  .button .top {
+    padding: 12px 15px 12px 15px;
+  }
+  .part-one {
+    margin-top: 5.5rem;
+  }
+ 
+
+}
+
+
+/* Small & Medium devices (tablets, phones 581px - 768px)*/
+@media only screen and (max-width: 768px) and (min-width: 581px) { 
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+  .headline-1 {
+    text-align: center !important;
+  }
+  .img-abridged {
+    width: 25%;
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+  .section {
+    height: 50vh;
+  }
+  .sub-headline-2 {
+    margin-top: -2.2rem;
+    left: 0rem;
+    margin-top: -2.2rem;
+    text-align: left;
+  }
+  .sub-headline-3 {
+    text-align: left;
+  }
+  .sub-headline-4 {
+    text-align: left;
+  }
+
+  .description-two {
+    text-align: left;
+  }
+  .img-top-one {
+    margin-left: 70%;
+    width: 23%;
+  }
+  .img-top-three {
+    margin-left: 80%;
+    margin-right: auto;
+    width: 28%;
+  }
+  .button .top {
+    padding: 12px 15px 12px 15px;
+  }
+  
 }
 
 
