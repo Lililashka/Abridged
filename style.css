@@ -179,6 +179,9 @@ h6 {
   margin-right: auto;
   width: 20%;
   margin-top: 35%;
+  position: absolute;
+  z-index: -3;
+
 }
 
 #wheel-one {
@@ -378,7 +381,8 @@ h6 {
     padding-top: 1rem;
   }
   .section {
-    height: 50vh;
+    padding: 1.5rem;
+    height: 42vh;
   }
   .sub-headline-2 {
     position: relative;
@@ -397,19 +401,23 @@ h6 {
     text-align: left;
   }
   .img-top-one {
-    margin-left: 70%;
+    margin-left: 60%;
     width: 23%;
   }
   .img-top-three {
-    margin-left: 80%;
+    margin-left: 60%;
     margin-right: auto;
-    width: 28%;
+    width: 25%;
   }
   .button .top {
-    padding: 12px 15px 12px 15px;
+    padding: 10px 10px 10px 10px;
   }
   .part-one {
     margin-top: 5.5rem;
+  }
+  .wrapper-button-right {
+    float: left;
+    justify-content: left;
   }
  
 
@@ -441,7 +449,8 @@ h6 {
     padding-top: 1rem;
   }
   .section {
-    height: 50vh;
+    padding: 1.5rem;
+    height: 42vh;
   }
   .sub-headline-2 {
     margin-top: -2.2rem;
@@ -460,16 +469,20 @@ h6 {
     text-align: left;
   }
   .img-top-one {
-    margin-left: 70%;
+    margin-left: 60%;
     width: 23%;
   }
   .img-top-three {
-    margin-left: 80%;
+    margin-left: 60%;
     margin-right: auto;
-    width: 28%;
+    width: 25%;
   }
   .button .top {
-    padding: 12px 15px 12px 15px;
+    padding: 10px 10px 10px 10px;
+  }
+  .wrapper-button-right {
+    float: left;
+    justify-content: left;
   }
   
 }
