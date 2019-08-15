@@ -187,7 +187,8 @@ h6 {
 #wheel-one {
   margin-top: 20%;
   width: 75%;
-  z-index: -1 !important;
+  position: relative;
+  z-index: -20 !important;
 }
 
 
@@ -484,6 +485,83 @@ h6 {
     float: left;
     justify-content: left;
   }
+  
+}
+
+/* Small & Medium devices (tablets, phones 581px - 768px)*/
+@media only screen and (orientation: landscape) { 
+  h1 {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+  .headline-1 {
+    text-align: center !important;
+  }
+  .img-abridged {
+    width: 15%;
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+  .section {
+    padding: 1.5rem;
+    height: 70vh;
+  }
+  .part-one {
+    padding-top: 10rem;
+  }
+  .part-three {
+    padding: 1.5rem;
+  }
+  .sub-headline-2 {
+    margin-top: -2.2rem;
+    left: 0rem;
+    margin-top: -2.2rem;
+    text-align: left;
+  }
+  .sub-headline-3 {
+    text-align: left;
+  }
+  .sub-headline-4 {
+    text-align: left;
+    padding-top: 1rem;
+  }
+
+  .description-two {
+    text-align: left;
+  }
+  .img-top-one {
+    margin-left: 60%;
+    width: 23%;
+  }
+  .img-top-three {
+    margin-left: 60%;
+    margin-right: auto;
+    width: 25%;
+  }
+  .button .top {
+    padding: 10px 10px 10px 10px;
+  }
+  .wrapper-button-right {
+    float: left;
+    justify-content: left;
+  }
+  #wheel-one {
+    margin-top: 25rem;
+    width: 40%;
+  }
+
   
 }
 
