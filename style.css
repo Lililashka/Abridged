@@ -354,4 +354,77 @@ h6 {
 }
 
 
+/*Small devices (320px to landscape phones)*/
+@media only screen and (max-width: 580px) and (min-width: 300px) { 
+  h1 {
+    font-size: 2.9rem;
+  }
+  h2 {
+    font-size: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.7rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  .section {
+    height: 60vh;
+    padding: 1rem;
+  }
+  .sub-headline-2 {
+    position: relative;
+    left: 1rem;
+    margin-top: -2.2rem;
+  }
+  .sub-headline-4 {
+    text-align: left;
+    top: -2.5rem;
+  }
+  .img-top-one {
+    margin-left: 70%;
+    width: 23%;
+  }
+  .img-top-three {
+    margin-left: 80%;
+    margin-right: auto;
+    width: 28%;
+  }
+
+}
+
+
+/* Small & Medium devices (tablets, phones 550px - 768px)*/
+@media only screen and (max-width: 768px) and (min-width: 581px) { 
+  h1 {
+    font-size: 2.9rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  .section {
+    height: 60vh;
+    padding: 1rem;
+  }
+  .sub-headline-2 {
+    left: 5rem;
+    margin-top: -2.2rem;
+  }
+  .sub-headline-4 {
+    text-align: left;
+  }
+  .img-top-one {
+    margin-left: 70%;
+    width: 23%;
+  }
+  .img-top-three {
+    margin-left: 80%;
+    margin-right: auto;
+    width: 28%;
+  }
+}
+
+
 
