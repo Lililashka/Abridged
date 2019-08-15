@@ -29,7 +29,7 @@ html {
   }
   
   img{
-    height:110vh;
+    padding: 10rem;
     width: auto;
     
   }
@@ -46,7 +46,10 @@ html {
         padding: 3vw;
   }
   
-
+  .headline {
+    position: relative;
+    text-align: center;
+  }
 
   .scroll-effect img{
       visibility:hidden;
@@ -117,13 +120,13 @@ a:link {
   }
   img {
     vertical-align: middle;
+    padding: 0;
   }
 }
 
 
-/*Small devices (landscape phones, 576px and up)*/
-/* Medium devices (tablets, 768px and up)*/
-@media only screen and (max-width: 768px) and (min-width: 550px) { 
+/* Small & Medium devices (tablets, phones 550px - 768px)*/
+@media only screen and (max-width: 768px) and (min-width: 581px) { 
   body {
   height: 100vh;
   width: 100vw;
@@ -140,8 +143,6 @@ a:link {
   img {
     vertical-align: middle;
   }
-  
-  
 }
 
 /* Large devices (desktops, 769px and up)*/
@@ -151,9 +152,8 @@ a:link {
   }
   img {
     vertical-align: middle;
+    padding:0;
   }
-  .scroll-effect {
-    margin-left: 5rem;
-}
+
   
 }
