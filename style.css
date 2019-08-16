@@ -129,7 +129,7 @@ h6 {
 }
 
 .topnav a:hover {
-  color: black;
+  color: blue;
 }
 
 .topnav a.active {
@@ -141,8 +141,46 @@ h6 {
   float: right;
 }
 
-.logo-tt, .logo-github {
-  padding-right: 4rem;
+.dropdown {
+  float: center;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  color: red;
+  padding: 14px 16px;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: whitesmoke;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  float: right;
 }
 
 
