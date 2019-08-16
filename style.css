@@ -45,7 +45,7 @@ h4 {
 h5 {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   margin-top: 0.2rem;
   margin-bottom: 0;
@@ -428,11 +428,12 @@ h6 {
 /* Small & Medium devices (tablets, phones 581px - 768px)*/
 @media only screen and (max-width: 768px) and (min-width: 581px) { 
   h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 0;
   }
   h4 {
     font-size: 1rem;
@@ -451,7 +452,7 @@ h6 {
   }
   .section {
     padding: 1.5rem;
-    height: 42vh;
+    height: 55vh;
   }
   .sub-headline-2 {
     margin-top: -2.2rem;
@@ -463,7 +464,9 @@ h6 {
     text-align: left;
   }
   .sub-headline-4 {
+    padding-top: 2rem;
     text-align: left;
+    top: -5.5rem;
   }
 
   .description-two {
@@ -488,16 +491,14 @@ h6 {
   
 }
 
-/* Small & Medium devices (tablets, phones 581px - 768px)*/
-@media only screen and (orientation: landscape) { 
+
+@media only screen and (max-width: 850px) and (min-width: 769px) and (orientation: landscape) { 
   h1 {
     font-size: 3rem;
-    margin-top: 1rem;
   }
   h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0;
+    font-size: 1.8rem;
+    padding-top: 0.5rem;
   }
   h4 {
     font-size: 1rem;
