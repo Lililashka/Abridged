@@ -141,6 +141,7 @@ h6 {
 
 .social {
   margin-top: 0.55rem;
+  margin-right: 1rem;
 }
 
 /*/////// IMAGE /////// */
@@ -233,7 +234,8 @@ h6 {
 /*///////  BUTTON /////// */
 
 .nav-button {
-  margin-right: 3rem;
+  margin-right: 2rem;
+  margin-left: 1rem;
   background: white;
   padding: 8px 12px 8px 12px;
   letter-spacing: 2px;
