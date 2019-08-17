@@ -116,15 +116,14 @@ h6 {
 .topnav {
   overflow: hidden;
   background-color: white;
-  z-index: 100;
-  padding: 10px;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100vw; /* Full width */
+  padding: 1rem;
 }
 
 .topnav a {
+  float: left;
+  color: black;
   text-align: center;
+  padding: 10px 12px;
   text-decoration: none;
 }
 
@@ -133,56 +132,16 @@ h6 {
 }
 
 .topnav a.active {
-  background-color: white;
-  color: white;
+  color: blue;
 }
 
 .topnav-right {
   float: right;
 }
 
-.dropdown {
-  float: center;
+.social {
+  margin-top: 0.55rem;
 }
-
-.dropdown .dropbtn {
-  border: none;
-  color: red;
-  padding: 14px 16px;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: white;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: whitesmoke;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: red;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: whitesmoke;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  float: right;
-}
-
 
 /*/////// IMAGE /////// */
 
@@ -276,7 +235,7 @@ h6 {
 .nav-button {
   margin-right: 3rem;
   background: white;
-  padding: 12px 18px 12px 18px;
+  padding: 8px 12px 8px 12px;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
