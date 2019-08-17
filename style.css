@@ -146,10 +146,8 @@ h6 {
 
 /*/////// IMAGE /////// */
 
-.img-abridged {
-  width: 10%;
-  padding-left: 2rem;
-  padding-top: 1rem;
+.main-logo {
+  width: 8rem;
 }
 .img-top-one {
   display: block;
@@ -419,7 +417,28 @@ h6 {
     float: left;
     justify-content: left;
   }
- 
+  .topnav {
+    background-color: white;
+    padding: 0.3rem;
+    margin-top: 0.9rem;
+  }
+  
+  .topnav a {
+    padding: 5px 8px;
+  }
+  .social {
+    margin-top: 0.33rem;
+    margin-right: 0.15rem;
+  }
+  .nav-button {
+    margin-right: 0.2rem;
+    margin-left: 0.4rem;
+    padding: 7px 10px 7px 10px;
+  }
+  .main-logo {
+    width: 5rem;
+    margin-top: 0.4rem;
+  }
 
 }
 
