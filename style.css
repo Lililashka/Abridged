@@ -2,8 +2,7 @@ html, body {
   transition: background-color 1s ease;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+ 
 }
 
 /*/////// TEXT & HEADLINES /////// */
@@ -137,24 +136,33 @@ h6 {
 .list-integration {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
-  padding-top: 4rem;
+  padding-top: 2rem;
   text-align: center;
 }
 
 .integration {
   display: inline-block;
   justify-content: space-around;
-  padding: 2.5rem;
+  padding: 10px 12px 10px 12px;
   text-decoration: none;
+  border: 2px solid white;
+  margin: 1.1rem;
+  margin-bottom: 0.3rem;
+  transform: skew(-8deg);
+  background-color: white;
 }
 
 .integration:any-link {
   color: black;
+  transition: 0.3s;
 }
 
+
 /*/////// NAV /////// */
+
+
 
 .topnav {
   overflow: hidden;
@@ -171,14 +179,17 @@ h6 {
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .topnav a:hover {
   color: blue;
+  transition: 0.3s;
 }
 
 .topnav a.active {
   color: blue;
+  transition: 0.3s;
 }
 
 .topnav-right {
@@ -188,6 +199,10 @@ h6 {
 .social {
   margin-top: 0.55rem;
   margin-right: 1rem;
+}
+
+.nav-mobile {
+  visibility: hidden;
 }
 
 /*/////// IMAGE /////// */
@@ -245,7 +260,7 @@ h6 {
 }
 
 .section {
-  padding: 4rem;
+  padding: 2rem;
   padding-top: 2rem;
   height: 80vh;
   justify-content: space-around;
@@ -257,6 +272,7 @@ h6 {
   height: 55vh;
   margin-left: 3.5rem;
   margin-right: 3.5rem;
+  margin-top: 5rem;
 }
 
 
@@ -278,8 +294,6 @@ h6 {
 /*///////  BUTTON /////// */
 
 .nav-button {
-  margin-right: 2rem;
-  margin-left: 1rem;
   background: white;
   padding: 8px 12px 8px 12px;
   letter-spacing: 2px;
@@ -288,6 +302,7 @@ h6 {
   border: 2px solid black;
   color: black;
   transition: 0.5s;
+  margin-right: 2rem;
 }
 
 .nav-button:hover {
@@ -441,8 +456,12 @@ h6 {
 }
 
 
+
+
+
 /*Small devices (320px to landscape phones)*/
 @media only screen and (max-width: 580px) and (min-width: 300px) { 
+ 
   h1 {
     font-size: 2.2rem;
   }
@@ -465,7 +484,6 @@ h6 {
     padding-top: 1rem;
   }
   .section {
-    padding: 1.5rem;
     height: 42vh;
   }
   .sub-headline-2 {
@@ -527,22 +545,14 @@ h6 {
     float: left;
     justify-content: left;
   }
-  .topnav {
-    background-color: white;
-    padding: 0.3rem;
-    margin-top: 0.9rem;
-  }
   
-  .topnav a {
-    padding: 5px 8px;
-  }
+  
   .social {
     margin-top: 0.33rem;
     margin-right: 0.15rem;
   }
   .nav-button {
-    margin-right: 0.2rem;
-    margin-left: 0.4rem;
+    margin-right: 2rem;
     padding: 7px 10px 7px 10px;
   }
   .main-logo {
@@ -553,6 +563,46 @@ h6 {
   .part-three {
     margin-top: 12.5rem;
   }
+
+  .nav-mobile {
+    visibility: visible;
+  }
+
+.sub-headline-integration {
+  padding-top: 2rem;
+  text-align: center;
+  opacity: 1 !important;
+  color: black;
+  margin-top: 10rem;
+}
+
+.list-integration {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.integration {
+  display: inline-block;
+  justify-content: space-around;
+  padding: 7px 9px 7px 9px;
+  text-decoration: none;
+  border: 2px solid white;
+  margin: 0.5rem;
+  transform: skew(-8deg);
+  background-color: white;
+}
+
+.integration:any-link {
+  color: black;
+  transition: 0.3s;
+}
+.dropdown {
+  display: none;
+}
 
 }
 
@@ -583,8 +633,8 @@ h6 {
     padding-top: 1rem;
   }
   .section {
-    padding: 1.5rem;
     height: 55vh;
+   
   }
   .sub-headline-2 {
     margin-top: -2.2rem;
@@ -599,6 +649,10 @@ h6 {
     padding-top: 2rem;
     text-align: left;
     top: -5.5rem;
+  }
+
+  .sub-headline-integration {
+    margin-top: 10rem;
   }
 
   .description-two {
@@ -621,6 +675,13 @@ h6 {
     justify-content: left;
   }
   
+
+  .nav-mobile {
+    visibility: visible;
+  }
+  .dropdown {
+    display: none;
+  }
 }
 
 
@@ -649,7 +710,6 @@ h6 {
     padding-top: 1rem;
   }
   .section {
-    padding: 1.5rem;
     height: 70vh;
   }
   .part-one {
@@ -684,6 +744,10 @@ h6 {
     margin-top: 4.8rem;
   }
 
+  .sub-headline-integration {
+    margin-top: 10rem;
+  }
+
   .description-two {
     text-align: left;
   }
@@ -706,6 +770,14 @@ h6 {
   #wheel-one {
     margin-top: 25rem;
     width: 40%;
+  }
+ 
+  .nav-mobile {
+    visibility: visible;
+  }
+
+  .dropdown {
+    display: none;
   }
 
   
