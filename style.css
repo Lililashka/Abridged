@@ -130,6 +130,9 @@ h6 {
   overflow: hidden;
   background-color: white;
   padding: 1rem;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .topnav a {
@@ -201,9 +204,6 @@ h6 {
 }
 
 
-
-
-
 /*/////// CONTAINER /////// */
 
 .container {
@@ -212,8 +212,6 @@ h6 {
   margin: 0;
   padding: 0;
 }
-
-
 
 .section {
   padding: 4rem;
