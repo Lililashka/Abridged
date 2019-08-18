@@ -216,14 +216,17 @@ h6 {
 .section {
   padding: 4rem;
   padding-top: 2rem;
-} 
-
-.section {
   height: 80vh;
   justify-content: space-around;
   align-items: center;
+} 
 
+.section-integration {
+  background-color: whitesmoke;
+  opacity: 0.3;
+  height: 35vh;
 }
+
 
 .color-white {
   background-color: #fff;
