@@ -411,7 +411,10 @@ h6 {
     padding: 10px 10px 10px 10px;
   }
   .part-one {
-    margin-top: 5.5rem;
+    margin-top: 4.5rem;
+  }
+  .part-two {
+    margin-top: 3rem;
   }
   .wrapper-button-right {
     float: left;
@@ -440,11 +443,15 @@ h6 {
     margin-top: 0.4rem;
   }
 
+  .part-three {
+    margin-top: 12.5rem;
+  }
+
 }
 
 
 /* Small & Medium devices (tablets, phones 581px - 768px)*/
-@media only screen and (max-width: 768px) and (min-width: 581px) { 
+@media only screen and (max-width: 650px) and (min-width: 581px) { 
   h1 {
     font-size: 3rem;
   }
@@ -481,7 +488,7 @@ h6 {
   .sub-headline-3 {
     text-align: left;
   }
-  .sub-headline-4 {
+  .sub-headline-4, .sub-headline-5 {
     padding-top: 2rem;
     text-align: left;
     top: -5.5rem;
@@ -510,13 +517,14 @@ h6 {
 }
 
 
-@media only screen and (max-width: 850px) and (min-width: 769px) and (orientation: landscape) { 
+@media only screen and (max-width: 850px) and (min-width: 651px) and (orientation: landscape) { 
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   h2 {
     font-size: 1.8rem;
     padding-top: 0.5rem;
+    margin-bottom: 5px;
   }
   h4 {
     font-size: 1rem;
@@ -540,8 +548,11 @@ h6 {
   .part-one {
     padding-top: 10rem;
   }
+  .part-two {
+    padding-top: 5rem;
+  }
   .part-three {
-    padding: 1.5rem;
+    margin-top: 10rem;
   }
   .sub-headline-2 {
     margin-top: -2.2rem;
@@ -555,6 +566,12 @@ h6 {
   .sub-headline-4 {
     text-align: left;
     padding-top: 1rem;
+    margin-top: 12px;
+  }
+  .sub-headline-5 {
+    text-align: left;
+    padding-top: 1rem;
+    margin-top: 3px;
   }
 
   .description-two {
