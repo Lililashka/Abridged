@@ -29,8 +29,10 @@ h2 {
 h3 {
   margin: 0;
   font-family: 'Libre Franklin', sans-serif;
-  font-weight: 400;
-  font-size: 3rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  
+
 }
 
 h4 {
@@ -124,6 +126,34 @@ h6 {
   text-align: right;
   top: -3.1rem !important;
 }
+
+.sub-headline-integration {
+  padding-top: 2rem;
+  text-align: center;
+  opacity: 1 !important;
+  color: black;
+}
+
+.list-integration {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.integration {
+  display: inline-block;
+  justify-content: space-around;
+  padding: 2.5rem;
+  text-decoration: none;
+}
+
+.integration:any-link {
+  color: black;
+}
+
 /*/////// NAV /////// */
 
 .topnav {
@@ -204,6 +234,7 @@ h6 {
 }
 
 
+
 /*/////// CONTAINER /////// */
 
 .container {
@@ -222,9 +253,10 @@ h6 {
 } 
 
 .section-integration {
-  background-color: whitesmoke;
-  opacity: 0.3;
-  height: 35vh;
+  background-color: rgb(255, 255, 255, 0);
+  height: 55vh;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 
 
