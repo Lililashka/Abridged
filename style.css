@@ -493,6 +493,8 @@ h6 {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  border-radius: 0px !important;
+  background-color: white !important;
   
 }
 
@@ -684,8 +686,8 @@ h6 {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  background-color: white;
-  border-radius: 0px;
+  background-color: white !important;
+  border-radius: 0px !important;
 }
 
 .button-subscribe:hover {
@@ -766,12 +768,35 @@ h6 {
     justify-content: left;
   }
   
-
   .nav-mobile {
     visibility: visible;
   }
   .dropdown {
     display: none;
+  }
+  .button-subscribe {
+    width: 17.2rem;
+    height: 3.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 2rem;
+    border: 2px solid black;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background-color: white !important;
+    border-radius: 0px !important;
+  }
+  
+  .button-subscribe:hover {
+    border: 2px solid black;
+    transition: 0.3s;
+    background: blue;
+    color: white;
   }
 }
 
@@ -884,8 +909,8 @@ h6 {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    background-color: white;
-    border-radius: 0px;
+    background-color: white !important;
+    border-radius: 0px !important;
   }
   
   .button-subscribe:hover {
