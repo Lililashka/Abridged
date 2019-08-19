@@ -180,6 +180,7 @@ h6 {
   padding: 10px 12px;
   text-decoration: none;
   transition: 0.3s;
+  margin-left: 1rem;
 }
 
 .topnav a:hover {
@@ -271,10 +272,10 @@ h6 {
 
 .section-integration {
   background-color: rgb(255, 255, 255, 0);
-  height: 55vh;
+  height: 50vh;
   margin-left: 3.5rem;
   margin-right: 3.5rem;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 
@@ -302,15 +303,15 @@ h6 {
   text-align: center;
   text-transform: uppercase;
   border: 2px solid black;
-  color: black;
   transition: 0.5s;
   margin-right: 2rem;
 }
 
 .nav-button:hover {
-  color: blue;
-  border: 2px solid blue;
-  transition: 0.5s;
+  border: 2px solid black;
+  transition: 0.3s;
+  background-color: blue;
+  color: white !important;
 }
 
 
