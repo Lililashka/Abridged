@@ -587,6 +587,9 @@ h6 {
   .part-two {
     margin-top: 3rem;
   }
+  .part-three {
+    margin-top: 18rem;
+  }
   .wrapper-button-right {
     float: left;
     justify-content: left;
@@ -606,9 +609,7 @@ h6 {
     margin-top: 0.4rem;
   }
 
-  .part-three {
-    margin-top: 12.5rem;
-  }
+ 
 
   .nav-mobile {
     visibility: visible;
