@@ -499,7 +499,6 @@ h6 {
   color: blue;
   border: 2px solid blue;
   transition: 0.3s;
-
 }
 
 
@@ -647,6 +646,41 @@ h6 {
 }
 .dropdown {
   display: none;
+}
+
+#mc_embed_signup {
+  clear:center;
+  width:100%;
+}
+
+.email-field {
+  width: 18rem;
+  border: 2px solid black;
+  height: 2.3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.button-subscribe {
+  width: 17.2rem;
+  height: 3.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 2rem;
+  border: 2px solid black;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 }
