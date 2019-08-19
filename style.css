@@ -582,7 +582,7 @@ h6 {
     padding: 10px 10px 10px 10px;
   }
   .part-one {
-    margin-top: 4.5rem;
+    margin-top: 5rem;
   }
   .part-two {
     margin-top: 3rem;
@@ -620,7 +620,7 @@ h6 {
   text-align: center;
   opacity: 1 !important;
   color: black;
-  margin-top: 10rem;
+  margin-top: 4.5rem;
 }
 
 .list-integration {
@@ -685,8 +685,9 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   background-color: white;
-
+  border-radius: 0px;
 }
+
 .button-subscribe:hover {
   border: 2px solid black;
   transition: 0.3s;
@@ -868,6 +869,30 @@ h6 {
 
   .dropdown {
     display: none;
+  }
+  .button-subscribe {
+    width: 17.2rem;
+    height: 3.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 2rem;
+    border: 2px solid black;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background-color: white;
+    border-radius: 0px;
+  }
+  
+  .button-subscribe:hover {
+    border: 2px solid black;
+    transition: 0.3s;
+    background: blue;
+    color: white;
   }
 
   
