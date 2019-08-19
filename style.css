@@ -598,7 +598,6 @@ h6 {
     justify-content: left;
   }
   
-  
   .social {
     margin-top: 0.33rem;
     margin-right: 0.15rem;
@@ -611,8 +610,6 @@ h6 {
     width: 5rem;
     margin-top: 0.4rem;
   }
-
- 
 
   .nav-mobile {
     visibility: visible;
@@ -699,6 +696,39 @@ h6 {
 }
 
 }
+
+/*Small devices (320px to landscape phones)*/
+
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+  @media {
+    
+.button-subscribe {
+  width: 17.2rem;
+  height: 3.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 2rem;
+  border: 2px solid black;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background-color: white;
+  border-radius: 0px !important;
+}
+
+.button-subscribe:hover {
+  border: 2px solid black;
+  transition: 0.3s;
+  background: blue;
+  color: white;
+}
+}
+}
+
 
 
 /* Small & Medium devices (tablets, phones 581px - 768px)*/
