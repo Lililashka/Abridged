@@ -493,12 +493,14 @@ h6 {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  
 }
 
 .button-subscribe:hover {
-  color: blue;
-  border: 2px solid blue;
+  border: 2px solid black;
   transition: 0.3s;
+  background: blue;
+  color: white;
 }
 
 
@@ -681,6 +683,14 @@ h6 {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  background-color: white;
+
+}
+.button-subscribe:hover {
+  border: 2px solid black;
+  transition: 0.3s;
+  background: blue;
+  color: white;
 }
 
 }
