@@ -499,7 +499,7 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   border-radius: 0px !important;
-  
+  background-color: transparent;
 }
 
 .button-subscribe:hover {
